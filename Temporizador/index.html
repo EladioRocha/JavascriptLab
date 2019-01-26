@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Temporizador</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        html, body {
+            font-family: 'Press Start 2P', cursive;
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .h-100vh {
+            height: 100vh;
+            background-color: #343434;
+        }
+
+        .h-60vh {
+            height: 60vh;
+        }
+
+        .w-60 {
+            width: 60vw;
+        }
+
+        .time {
+            margin: 0 auto;
+            display: inline;
+            padding-top: 15vh; 
+        }
+
+        .bg-gray {
+            background-color: #323232;
+        }
+    </style>
+</head>
+<body>
+    <section class="container-fluid">
+        <div class="row">
+            <section class="h-100vh valign-wrapper">
+                <div class="time h-60vh w-60 center-align">
+                    <h1 class="white-text" id="chronometer"><span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span></h1>
+                    <button class="btn bg-gray z-depth-3 modal-trigger" data-target="settings">Configurar cronometro</button>
+                    <!-- MODAL STRUCTURE -->
+                    <div id="settings" class="modal">
+                        <div class="modal-content">
+                            <h5>Establece la duración</h5>
+                            <div class="input-field">
+                                <input id="inp-hours" type="number" class="validate" required>
+                                <label for="hours">Horas</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="inp-minutes" type="number" class="validate" required>
+                                <label for="minutes">Minutos</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="inp-seconds" type="number" class="validate" required>
+                                <label for="seconds">Segundos</label>
+                            </div>
+                            <div class="input-field">
+                                <p>
+                                    <label>
+                                        <input type="checkbox" class="filled-in" checked="checked" id="loop"/>
+                                        <span>Repetir audio</span>
+                                    </label>
+                                </p>
+                            </div>
+                            <button class="btn bg-gray modal-close" id="start">Empezar</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+    
+    <script src="assets/js/materialize.min.js"></script>
+    <script src="assets/js/index.js"></script>
+</body>
+</html>
